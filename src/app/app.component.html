@@ -5,12 +5,11 @@
 <mat-card>
   <mat-grid-list cols="4" rowHeight="2:1" >
     <div *ngFor="let carta of this.cartas">
-      <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'" >
-          {{carta.urlImagen}}
+      <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
+          ?
       </mat-grid-tile>
       <mat-grid-tile class="cartaDescubierta" *ngIf="carta.estado!=='escondido'">
-        Carta descubierta!!!
-
+          {{carta.urlImagen}}
       </mat-grid-tile>
     </div>
   </mat-grid-list>

@@ -37,14 +37,17 @@ export class AppComponent implements OnInit{
           this.primeraCarta=cartaElegida;
       }else{
         if (this.primeraCarta.urlImagen!==cartaElegida.urlImagen){
-            cartaElegida.estado= "escondido"
-            this.cartas.map(carta =>{
-              carta.id===this.primeraCarta.id ? carta.estado = "escondido": "";
-            })
+             setTimeout(() => {
+              cartaElegida.estado= "escondido"
+              this.cartas.map(carta =>{
+                carta.id===this.primeraCarta.id ? carta.estado = "escondido": "";
+              })
+            }, 1000);
         }else{
           this.aciertos++;
         }
       }
+
       this.aciertos===(this.cartas.length/2) ? alert("GANASTE..") : console.log("SEGUI JUGANDO..");
   }
 
