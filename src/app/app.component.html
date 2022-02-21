@@ -1,16 +1,16 @@
 <header>
   <h1 class="titulo">Juego Memo</h1>
 </header>
-<main>
+<body>
   <mat-card class="cardBotones">
-    <button mat-raised-button color="primary" (click)="reiniciarJuego()">Reiniciar</button>
+    <button mat-raised-button (click)="reiniciarJuego()">Reiniciar</button>
     <div>
-      <button mat-raised-button color="primary" (click)="cambiarNivel(1)" >Nivel 1</button>
-      <button mat-raised-button color="primary" (click)="cambiarNivel(2)">Nivel 2</button>
-      <button mat-raised-button color="primary" (click)="cambiarNivel(3)">Nivel 3</button>
+      <button mat-raised-button (click)="cambiarNivel(1)" >Nivel 1</button>
+      <button mat-raised-button (click)="cambiarNivel(2)">Nivel 2</button>
+      <button mat-raised-button (click)="cambiarNivel(3)">Nivel 3</button>
     </div>
   </mat-card>
-  <mat-card style="box-shadow: none">
+  <mat-card class="cardJuego">
     <mat-grid-list cols="4" rowHeight="2:1" >
       <div *ngFor="let carta of this.cartas">
         <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
@@ -22,7 +22,7 @@
       </div>
     </mat-grid-list>
   </mat-card>
-</main>
+</body>
 <footer>
 
 </footer>

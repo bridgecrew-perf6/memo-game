@@ -1,27 +1,56 @@
-.cartaOculta{
-    background-color:darkgrey;
-    cursor: pointer; 
+$colorPrincipal: #b2dafa;
+$color-negro: #000000;
+
+@mixin botonBlack {
+    background-color: $color-negro;
+    color: #b2dafa;
 }
 
-.cartaDescubierta{
-    background-color:darkgrey;
-}
+//---------- ESTILOS -------------
 
-.titulo{
-    text-align: center;
-    padding: 4px;
+
+header{
+    background-color: $color-negro;
+    .titulo{
+        text-align: center;
+        padding: 4px;
+        background-color: $color-negro;
+        color: $colorPrincipal;
+        text-transform: uppercase;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
 }
 
 .cardBotones{
     display: flex;
     justify-content: space-between;
+    background-color: $colorPrincipal;
+    button{
+        @include botonBlack;
+    }
     div{
         display: flex;
         justify-content: space-between;
         button{
             margin-right: 4px;
             margin-left: 4px;
+            @include botonBlack;
         }
+    }
+}
+
+.cardJuego{
+    box-shadow: none;
+    background-color: $colorPrincipal;
+    
+    .cartaOculta{
+        background-color:darkgrey;
+        cursor: pointer; 
+    }
+    
+    .cartaDescubierta{
+        background-color:darkgrey;
     }
 }
 
