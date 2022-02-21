@@ -24,8 +24,8 @@
   </mat-card>
 </body>
 <footer>
-
+  <mat-card *ngIf="this.juegoCompletado" class="cardResultado">
+      GANASTE!!!
+  </mat-card>
 </footer>
-
-
 <router-outlet></router-outlet>

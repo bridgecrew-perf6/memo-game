@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   primeraCarta: Carta = {id:"",urlImagen: "",estado: ""}
   aciertos: number =0;
   nivelElegido: number =1;
+  juegoCompletado = false;
   
   constructor() {
   }
@@ -24,12 +25,14 @@ export class AppComponent implements OnInit{
     this.cartas = this.mezclarCartas(listadoCartas1);
     this.movimientos =0;
     this.aciertos=0;
+    this.juegoCompletado = false;
   }
 
   public reiniciarJuego(){
       this.cartas.map(cart => cart.estado="escondido")
       this.movimientos =0;
       this.aciertos=0;
+      this.juegoCompletado = false;
       if(this.nivelElegido===1){
         this.cartas = this.mezclarCartas(listadoCartas1);
       }
@@ -53,7 +56,7 @@ export class AppComponent implements OnInit{
       }else{
           await this.compararCartas(this.primeraCarta, cartaElegida);
           setTimeout(() => {
-            this.aciertos===(this.cartas.length/2) ? alert("GANASTE..") : console.log("SEGUI JUGANDO..");
+            this.aciertos===(this.cartas.length/2) ? this.juegoCompletado=true : console.log("SEGUI JUGANDO..");
           }, 2000);   
       }   
   }
