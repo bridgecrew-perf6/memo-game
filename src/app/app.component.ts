@@ -1,6 +1,8 @@
 import { Carta } from './carta';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import listadoCartas from 'src/assets/misDatos.json';
+import listadoCartas1 from 'src/assets/nivel1.json';
+import listadoCartas2 from 'src/assets/nivel2.json';
+import listadoCartas3 from 'src/assets/nivel3.json';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +15,13 @@ export class AppComponent implements OnInit{
   movimientos: number =0;
   primeraCarta: Carta = {id:"",urlImagen: "",estado: ""}
   aciertos: number =0;
+  nivelElegido: number =1;
   
   constructor() {
   }
   
   ngOnInit(): void {
-    this.cartas = this.mezclarCartas(listadoCartas);
+    this.cartas = this.mezclarCartas(listadoCartas1);
     this.movimientos =0;
     this.aciertos=0;
   }
@@ -27,7 +30,16 @@ export class AppComponent implements OnInit{
       this.cartas.map(cart => cart.estado="escondido")
       this.movimientos =0;
       this.aciertos=0;
-      this.cartas = this.mezclarCartas(listadoCartas);
+      if(this.nivelElegido===1){
+        this.cartas = this.mezclarCartas(listadoCartas1);
+      }
+      if(this.nivelElegido===2){
+        this.cartas = this.mezclarCartas(listadoCartas2);
+      }
+      if(this.nivelElegido===3){
+        this.cartas = this.mezclarCartas(listadoCartas3);
+      }
+      
   }
 
   public async girarCarta(cartaElegida: Carta){
@@ -62,6 +74,11 @@ export class AppComponent implements OnInit{
     }else{
          this.aciertos++;
     }
+  }
+
+  public cambiarNivel(nivel: number ){
+      this.nivelElegido= nivel;
+      this.reiniciarJuego();
   }
   
 }

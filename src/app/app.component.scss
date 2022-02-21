@@ -7,3 +7,21 @@
     background-color:darkgrey;
 }
 
+.titulo{
+    text-align: center;
+    padding: 4px;
+}
+
+.cardBotones{
+    display: flex;
+    justify-content: space-between;
+    div{
+        display: flex;
+        justify-content: space-between;
+        button{
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+    }
+}
+

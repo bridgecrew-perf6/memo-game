@@ -1,18 +1,31 @@
-<mat-card>
-    <h1>Juego Memo</h1>
+<header>
+  <h1 class="titulo">Juego Memo</h1>
+</header>
+<main>
+  <mat-card class="cardBotones">
     <button mat-raised-button color="primary" (click)="reiniciarJuego()">Reiniciar</button>
-</mat-card>
-<mat-card>
-  <mat-grid-list cols="4" rowHeight="2:1" >
-    <div *ngFor="let carta of this.cartas">
-      <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
-           ?
-      </mat-grid-tile>
-      <mat-grid-tile class="cartaDescubierta" *ngIf="carta.estado!=='escondido'">
-          {{carta.urlImagen}}
-      </mat-grid-tile>
+    <div>
+      <button mat-raised-button color="primary" (click)="cambiarNivel(1)" >Nivel 1</button>
+      <button mat-raised-button color="primary" (click)="cambiarNivel(2)">Nivel 2</button>
+      <button mat-raised-button color="primary" (click)="cambiarNivel(3)">Nivel 3</button>
     </div>
-  </mat-grid-list>
-</mat-card>
+  </mat-card>
+  <mat-card style="box-shadow: none">
+    <mat-grid-list cols="4" rowHeight="2:1" >
+      <div *ngFor="let carta of this.cartas">
+        <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
+             ?
+        </mat-grid-tile>
+        <mat-grid-tile class="cartaDescubierta" *ngIf="carta.estado!=='escondido'">
+            {{carta.urlImagen}}
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+  </mat-card>
+</main>
+<footer>
+
+</footer>
+
 
 <router-outlet></router-outlet>
