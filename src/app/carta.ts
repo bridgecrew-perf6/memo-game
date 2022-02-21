@@ -1,5 +1,5 @@
 export interface Carta{
-    id: string,
+    id: number,
     urlImagen: string,
     estado: string,
 }

@@ -1,17 +1,19 @@
 <header>
-  <h1 class="titulo">Juego Memo</h1>
+  <h1 class="titulo">Juego De La Memoria</h1>
 </header>
 <body>
   <mat-card class="cardBotones">
     <button mat-raised-button (click)="reiniciarJuego()">Reiniciar</button>
     <div>
-      <button mat-raised-button (click)="cambiarNivel(1)" >Nivel 1</button>
+      <button mat-raised-button (click)="cambiarNivel(1)">Nivel 1</button>
       <button mat-raised-button (click)="cambiarNivel(2)">Nivel 2</button>
       <button mat-raised-button (click)="cambiarNivel(3)">Nivel 3</button>
+      <button mat-raised-button (click)="cambiarNivel(4)">Nivel 4</button>
+      <button mat-raised-button (click)="cambiarNivel(5)">Nivel 5</button>
     </div>
   </mat-card>
   <mat-card class="cardJuego">
-    <mat-grid-list cols="4" rowHeight="2:1" >
+    <mat-grid-list [cols]="cantColumnas" rowHeight="2:1" >
       <div *ngFor="let carta of this.cartas">
         <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
              ?
@@ -22,10 +24,11 @@
       </div>
     </mat-grid-list>
   </mat-card>
-</body>
-<footer>
   <mat-card *ngIf="this.juegoCompletado" class="cardResultado">
-      GANASTE!!!
+      <mat-card-title> GANASTE!!!</mat-card-title>
+      <mat-card-content>
+          Movimientos: {{this.movimientos/2}}
+      </mat-card-content>
   </mat-card>
-</footer>
+</body>
 <router-outlet></router-outlet>

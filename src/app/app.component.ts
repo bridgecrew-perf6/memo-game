@@ -1,8 +1,6 @@
 import { Carta } from './carta';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import listadoCartas1 from 'src/assets/nivel1.json';
-import listadoCartas2 from 'src/assets/nivel2.json';
-import listadoCartas3 from 'src/assets/nivel3.json';
+import listadoCartas from 'src/assets/listadoCartas.json';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +10,20 @@ import listadoCartas3 from 'src/assets/nivel3.json';
 export class AppComponent implements OnInit{ 
  
   cartas: Array<Carta> = [];
+  filtroDeCartas: Array<Carta> = [];
   movimientos: number =0;
-  primeraCarta: Carta = {id:"",urlImagen: "",estado: ""}
+  primeraCarta: Carta = {id:0,urlImagen: "",estado: ""}
   aciertos: number =0;
   nivelElegido: number =1;
   juegoCompletado = false;
+  cantColumnas: number = 2;
   
   constructor() {
   }
   
   ngOnInit(): void {
-    this.cartas = this.mezclarCartas(listadoCartas1);
+    this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=4));
+    this.cantColumnas = 2;
     this.movimientos =0;
     this.aciertos=0;
     this.juegoCompletado = false;
@@ -34,13 +35,24 @@ export class AppComponent implements OnInit{
       this.aciertos=0;
       this.juegoCompletado = false;
       if(this.nivelElegido===1){
-        this.cartas = this.mezclarCartas(listadoCartas1);
+        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=4));
+        this.cantColumnas = 2;
       }
       if(this.nivelElegido===2){
-        this.cartas = this.mezclarCartas(listadoCartas2);
+        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=6));
+        this.cantColumnas = 3;
       }
       if(this.nivelElegido===3){
-        this.cartas = this.mezclarCartas(listadoCartas3);
+        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=8));
+        this.cantColumnas = 4;
+      }
+      if(this.nivelElegido===4){
+        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=12));
+        this.cantColumnas = 4;
+      }
+      if(this.nivelElegido===5){
+        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=16));
+        this.cantColumnas = 4;
       }
       
   }
@@ -83,5 +95,5 @@ export class AppComponent implements OnInit{
       this.nivelElegido= nivel;
       this.reiniciarJuego();
   }
-  
+
 }

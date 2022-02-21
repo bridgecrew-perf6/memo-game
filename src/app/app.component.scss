@@ -54,9 +54,12 @@ header{
     }
 }
 
-footer{
-    .cardResultado{
-        @include botonBlack;
+.cardResultado{
+    @include botonBlack;
+    mat-card-title{
+        text-align: center;
+    }
+    mat-card-content{
+        text-align: center;
     }
 }
-

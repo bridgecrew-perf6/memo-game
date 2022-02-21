@@ -1,81 +1,81 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "urlImagen": "🌹",
         "estado": "escondido"
     },
     {
-        "id": "2",
-        "urlImagen": "🎁",
-        "estado": "escondido"
-    },
-    {
-        "id": "3",
-        "urlImagen": "👍",
-        "estado": "escondido"
-    },
-    {
-        "id": "4",
+        "id": 2,
         "urlImagen": "🌹",
         "estado": "escondido"
     },
     {
-        "id": "5",
-        "urlImagen": "🐱‍👤",
-        "estado": "escondido"
-    },
-    {
-        "id": "6",
-        "urlImagen": "🐱‍👤",
-        "estado": "escondido"
-    },
-    {
-        "id": "7",
-        "urlImagen": "👍",
-        "estado": "escondido"
-    },
-    {
-        "id": "8",
+        "id": 3,
         "urlImagen": "🎁",
         "estado": "escondido"
     },
     {
-        "id": "9",
+        "id": 4,
+        "urlImagen": "🎁",
+        "estado": "escondido"
+    },
+    {
+        "id": 5,
+        "urlImagen": "👍",
+        "estado": "escondido"
+    },
+    {
+        "id": 6,
+        "urlImagen": "👍",
+        "estado": "escondido"
+    },
+    {
+        "id": 7,
+        "urlImagen": "🐱‍👤",
+        "estado": "escondido"
+    },
+    {
+        "id": 8,
+        "urlImagen": "🐱‍👤",
+        "estado": "escondido"
+    },
+    {
+        "id": 9,
         "urlImagen": "🐱",
         "estado": "escondido"
     },
     {
-        "id": "10",
+        "id": 10,
         "urlImagen": "🐱",
         "estado": "escondido"
     },
     {
-        "id": "11",
+        "id": 11,
         "urlImagen": "📛",
         "estado": "escondido"
     },
     {
-        "id": "12",
+        "id": 12,
         "urlImagen": "📛",
         "estado": "escondido"
     },
     {
-        "id": "13",
+        "id": 13,
         "urlImagen": "🎂",
         "estado": "escondido"
     },
     {
-        "id": "14",
+        "id": 14,
         "urlImagen": "🎂",
         "estado": "escondido"
     },
     {
-        "id": "15",
+        "id": 15,
         "urlImagen": "🎶",
         "estado": "escondido"
     },
     {
-        "id": "16",
+        "id": 16,
         "urlImagen": "🎶",
         "estado": "escondido"
     }
