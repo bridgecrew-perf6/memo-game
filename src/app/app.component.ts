@@ -30,29 +30,38 @@ export class AppComponent implements OnInit{
       this.cartas = this.mezclarCartas(listadoCartas);
   }
 
-  public girarCarta(cartaElegida: Carta){
+  public async girarCarta(cartaElegida: Carta){
+      //mostrar carta
       this.movimientos++;
       cartaElegida.estado="visible";
+
+      //verificar que sea la primera o segundo seleccionada
       if (this.movimientos%2!==0){
           this.primeraCarta=cartaElegida;
       }else{
-        if (this.primeraCarta.urlImagen!==cartaElegida.urlImagen){
-             setTimeout(() => {
-              cartaElegida.estado= "escondido"
-              this.cartas.map(carta =>{
-                carta.id===this.primeraCarta.id ? carta.estado = "escondido": "";
-              })
-            }, 1000);
-        }else{
-          this.aciertos++;
-        }
-      }
-
-      this.aciertos===(this.cartas.length/2) ? alert("GANASTE..") : console.log("SEGUI JUGANDO..");
+          await this.compararCartas(this.primeraCarta, cartaElegida);
+          setTimeout(() => {
+            this.aciertos===(this.cartas.length/2) ? alert("GANASTE..") : console.log("SEGUI JUGANDO..");
+          }, 2000);   
+      }   
   }
+
 
   public mezclarCartas(misCartas: Array<Carta>): Array<Carta>{
       return misCartas.sort(()=> Math.random() - 0.5);
+  }
+
+  public compararCartas(carta1: Carta, carta2: Carta){
+    if (carta1.urlImagen!==carta2.urlImagen){
+        setTimeout(() => {
+          carta2.estado= "escondido"
+          this.cartas.map(carta =>{
+            carta.id===carta1.id ? carta.estado = "escondido": "";
+          })
+        }, 1000);
+    }else{
+         this.aciertos++;
+    }
   }
   
 }
