@@ -12,14 +12,14 @@
       <button mat-raised-button (click)="cambiarNivel(5)">Nivel 5</button>
     </div>
   </mat-card>
-  <mat-card class="cardJuego">
-    <mat-grid-list [cols]="cantColumnas" rowHeight="2:1" >
+  <mat-card class="cardJuego"  *ngIf="!this.juegoCompletado">
+    <mat-grid-list [cols]="cantColumnas" rowHeight="2:1" gutterSize="4px">
       <div *ngFor="let carta of this.cartas">
         <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
-             ?
+          <img src="./../assets/img/back.jpeg" alt="atras-carta" >
         </mat-grid-tile>
         <mat-grid-tile class="cartaDescubierta" *ngIf="carta.estado!=='escondido'">
-            {{carta.urlImagen}}
+          <img [src]=carta.urlImagen alt="frente-carta" >
         </mat-grid-tile>
       </div>
     </mat-grid-list>

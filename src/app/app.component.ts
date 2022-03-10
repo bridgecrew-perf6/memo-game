@@ -51,13 +51,14 @@ export class AppComponent implements OnInit{
         this.cantColumnas = 4;
       }
       if(this.nivelElegido===5){
-        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=16));
+        this.cartas = this.mezclarCartas(listadoCartas.filter(cart => cart.id<=20));
         this.cantColumnas = 4;
       }
       
   }
 
   public async girarCarta(cartaElegida: Carta){
+    
       //mostrar carta
       this.movimientos++;
       cartaElegida.estado="visible";
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit{
       if (this.movimientos%2!==0){
           this.primeraCarta=cartaElegida;
       }else{
-          await this.compararCartas(this.primeraCarta, cartaElegida);
+          this.compararCartas(this.primeraCarta, cartaElegida);
           setTimeout(() => {
             this.aciertos===(this.cartas.length/2) ? this.juegoCompletado=true : console.log("SEGUI JUGANDO..");
           }, 2000);   
@@ -85,7 +86,7 @@ export class AppComponent implements OnInit{
           this.cartas.map(carta =>{
             carta.id===carta1.id ? carta.estado = "escondido": "";
           })
-        }, 1000);
+        }, 2000);
     }else{
          this.aciertos++;
     }

@@ -1,21 +1,33 @@
-$colorPrincipal: #b2dafa;
-$color-negro: #000000;
+$color-fondo-principal: #000000; //#b2dafa
+$color-fondo-secundario: #21262d;;
+$color-texto: #c9d1d9;
 
 @mixin botonBlack {
-    background-color: $color-negro;
-    color: #b2dafa;
+    background-color: $color-fondo-secundario;
+    color: $color-texto;
+}
+
+@keyframes mostrar {
+    from {opacity: 0; transform: scale(0);}
+    to {opacity: 1;transform: scale(1);}
 }
 
 //---------- ESTILOS -------------
 
+img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
+}
 
 header{
-    background-color: $color-negro;
+    background-color: $color-fondo-secundario;
     .titulo{
         text-align: center;
         padding: 4px;
-        background-color: $color-negro;
-        color: $colorPrincipal;
+        background-color: $color-fondo-secundario;
+        color: $color-texto;
         text-transform: uppercase;
         padding-top: 16px;
         padding-bottom: 16px;
@@ -24,8 +36,9 @@ header{
 
 .cardBotones{
     display: flex;
+    box-shadow: none;
     justify-content: space-between;
-    background-color: $colorPrincipal;
+    background-color: $color-fondo-principal;
     button{
         @include botonBlack;
     }
@@ -42,15 +55,17 @@ header{
 
 .cardJuego{
     box-shadow: none;
-    background-color: $colorPrincipal;
-    
+    margin: 0 200px;
+    background-color: $color-fondo-principal;
     .cartaOculta{
-        background-color:darkgrey;
-        cursor: pointer; 
+        background:url("./../assets/img/back.jpeg");
+        cursor: pointer;
     }
     
     .cartaDescubierta{
-        background-color:darkgrey;
+        background-color:$color-fondo-secundario;
+        animation-name: mostrar;
+        animation-duration: 2s;
     }
 }
 
@@ -63,3 +78,186 @@ header{
         text-align: center;
     }
 }
+
+@media (max-width: 1200px) {
+    header{
+        background-color: $color-fondo-secundario;
+        .titulo{
+            text-align: center;
+            padding: 4px;
+            background-color: $color-fondo-secundario;
+            color: $color-texto;
+            text-transform: uppercase;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+    
+    .cardBotones{
+        display: flex;
+        box-shadow: none;
+        justify-content: space-between;
+        background-color: $color-fondo-principal;
+        button{
+            @include botonBlack;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-right: 4px;
+                margin-left: 4px;
+                @include botonBlack;
+            }
+        }
+    }
+    
+    .cardJuego{
+        box-shadow: none;
+        margin: 0 100px;
+        background-color: $color-fondo-principal;
+        .cartaOculta{
+            background-color:$color-fondo-secundario;
+            cursor: pointer; 
+        }
+        
+        .cartaDescubierta{
+            background-color:$color-fondo-secundario;
+    
+        }
+    }
+    
+    .cardResultado{
+        @include botonBlack;
+        mat-card-title{
+            text-align: center;
+        }
+        mat-card-content{
+            text-align: center;
+        }
+    }
+
+}
+
+@media (max-width: 968px) {
+    header{
+        background-color: $color-fondo-secundario;
+        .titulo{
+            text-align: center;
+            padding: 4px;
+            background-color: $color-fondo-secundario;
+            color: $color-texto;
+            text-transform: uppercase;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+    
+    .cardBotones{
+        display: flex;
+        box-shadow: none;
+        justify-content: space-between;
+        background-color: $color-fondo-principal;
+        button{
+            @include botonBlack;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-right: 4px;
+                margin-left: 4px;
+                @include botonBlack;
+            }
+        }
+    }
+    
+    .cardJuego{
+        box-shadow: none;
+        margin: 0 50px;
+        background-color: $color-fondo-principal;
+        .cartaOculta{
+            background-color:$color-fondo-secundario;
+            cursor: pointer; 
+        }
+        
+        .cartaDescubierta{
+            background-color:$color-fondo-secundario;
+    
+        }
+    }
+    
+    .cardResultado{
+        @include botonBlack;
+        mat-card-title{
+            text-align: center;
+        }
+        mat-card-content{
+            text-align: center;
+        }
+    }
+
+}
+
+@media (max-width: 600px) {
+    header{
+        background-color: $color-fondo-secundario;
+        .titulo{
+            text-align: center;
+            padding: 4px;
+            background-color: $color-fondo-secundario;
+            color: $color-texto;
+            text-transform: uppercase;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+    
+    .cardBotones{
+        display: flex;
+        box-shadow: none;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        background-color: $color-fondo-principal;
+        button{
+            @include botonBlack;
+            margin: 8px 80px;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-right: 2px;
+                margin-left: 2px;
+                @include botonBlack;
+            }
+        }
+    }
+    
+    .cardJuego{
+        box-shadow: none;
+        margin: 4px 4px;
+        background-color: $color-fondo-principal;
+        .cartaOculta{
+            background-color:$color-fondo-secundario;
+            cursor: pointer; 
+        }
+        
+        .cartaDescubierta{
+            background-color:$color-fondo-secundario;
+    
+        }
+    }
+    
+    .cardResultado{
+        @include botonBlack;
+        mat-card-title{
+            text-align: center;
+        }
+        mat-card-content{
+            text-align: center;
+        }
+    }
+    
+}
+

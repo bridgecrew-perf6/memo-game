@@ -1,82 +1,102 @@
 [
     {
         "id": 1,
-        "urlImagen": "🌹",
+        "urlImagen": "assets/img/front1.jpeg", 
         "estado": "escondido"
     },
     {
         "id": 2,
-        "urlImagen": "🌹",
+        "urlImagen": "assets/img/front1.jpeg",
         "estado": "escondido"
     },
     {
         "id": 3,
-        "urlImagen": "🎁",
+        "urlImagen":"assets/img/front2.jpeg",
         "estado": "escondido"
     },
     {
         "id": 4,
-        "urlImagen": "🎁",
+        "urlImagen": "assets/img/front2.jpeg",
         "estado": "escondido"
     },
     {
         "id": 5,
-        "urlImagen": "👍",
+        "urlImagen": "assets/img/front3.jpeg",
         "estado": "escondido"
     },
     {
         "id": 6,
-        "urlImagen": "👍",
+        "urlImagen": "assets/img/front3.jpeg",
         "estado": "escondido"
     },
     {
         "id": 7,
-        "urlImagen": "🐱‍👤",
+        "urlImagen":"assets/img/front4.jpeg",
         "estado": "escondido"
     },
     {
         "id": 8,
-        "urlImagen": "🐱‍👤",
+        "urlImagen": "assets/img/front4.jpeg",
         "estado": "escondido"
     },
     {
         "id": 9,
-        "urlImagen": "🐱",
+        "urlImagen": "assets/img/front5.jpeg",
         "estado": "escondido"
     },
     {
         "id": 10,
-        "urlImagen": "🐱",
+        "urlImagen":"assets/img/front5.jpeg",
         "estado": "escondido"
     },
     {
         "id": 11,
-        "urlImagen": "📛",
+        "urlImagen": "assets/img/front6.jpeg",
         "estado": "escondido"
     },
     {
         "id": 12,
-        "urlImagen": "📛",
+        "urlImagen": "assets/img/front6.jpeg",
         "estado": "escondido"
     },
     {
         "id": 13,
-        "urlImagen": "🎂",
+        "urlImagen": "assets/img/front7.jpeg",
         "estado": "escondido"
     },
     {
         "id": 14,
-        "urlImagen": "🎂",
+        "urlImagen": "assets/img/front7.jpeg",
         "estado": "escondido"
     },
     {
         "id": 15,
-        "urlImagen": "🎶",
+        "urlImagen": "assets/img/front8.jpeg",
         "estado": "escondido"
     },
     {
         "id": 16,
-        "urlImagen": "🎶",
+        "urlImagen": "assets/img/front8.jpeg",
+        "estado": "escondido"
+    },
+    {
+        "id": 17,
+        "urlImagen": "assets/img/front9.jpeg",
+        "estado": "escondido"
+    },
+    {
+        "id": 18,
+        "urlImagen": "assets/img/front9.jpeg",
+        "estado": "escondido"
+    },
+    {
+        "id": 19,
+        "urlImagen": "assets/img/front10.jpeg",
+        "estado": "escondido"
+    },
+    {
+        "id": 20,
+        "urlImagen": "assets/img/front10.jpeg",
         "estado": "escondido"
     }
 ]
