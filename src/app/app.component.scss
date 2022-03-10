@@ -21,6 +21,10 @@ $color-texto: #c9d1d9;
 
 //------------------- ESTILOS --------------------
 
+.fondoColor{
+    background-color: $btn-color-fondo !important;
+}
+
 img{
     width: 100%;
     height: auto;

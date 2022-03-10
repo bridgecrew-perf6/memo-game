@@ -5,11 +5,11 @@
   <mat-card class="cardBotones">
     <button mat-raised-button (click)="reiniciarJuego()">Reiniciar</button>
     <div>
-      <button mat-raised-button (click)="cambiarNivel(1)">Nivel 1</button>
-      <button mat-raised-button (click)="cambiarNivel(2)">Nivel 2</button>
-      <button mat-raised-button (click)="cambiarNivel(3)">Nivel 3</button>
-      <button mat-raised-button (click)="cambiarNivel(4)">Nivel 4</button>
-      <button mat-raised-button (click)="cambiarNivel(5)">Nivel 5</button>
+      <button mat-raised-button (click)="cambiarNivel(1)" [class]="{'fondoColor': this.nivelElegido===1}">Nivel 1</button>
+      <button mat-raised-button (click)="cambiarNivel(2)" [class]="{'fondoColor': this.nivelElegido===2}">Nivel 2</button>
+      <button mat-raised-button (click)="cambiarNivel(3)" [class]="{'fondoColor': this.nivelElegido===3}">Nivel 3</button>
+      <button mat-raised-button (click)="cambiarNivel(4)" [class]="{'fondoColor': this.nivelElegido===4}">Nivel 4</button>
+      <button mat-raised-button (click)="cambiarNivel(5)" [class]="{'fondoColor': this.nivelElegido===5}">Nivel 5</button>
     </div>
   </mat-card>
   <mat-card class="cardJuego"  *ngIf="!this.juegoCompletado">
