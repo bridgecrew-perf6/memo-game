@@ -70,9 +70,13 @@ header{
 }
 
 .cardResultado{
-    @include botonBlack;
+    background-color: $color-fondo-principal;
+    color: $color-texto;
+    animation-name: mostrar;
+    animation-duration: 2s;
     mat-card-title{
         text-align: center;
+        font-size: 2em;
     }
     mat-card-content{
         text-align: center;
@@ -128,12 +132,17 @@ header{
     }
     
     .cardResultado{
-        @include botonBlack;
+        animation-name: mostrar;
+        animation-duration: 2s;
+        background-color: $color-fondo-principal;
+        color: $color-texto;
         mat-card-title{
             text-align: center;
+            font-size: 2em;
         }
         mat-card-content{
             text-align: center;
+            color: $color-texto;
         }
     }
 
@@ -188,9 +197,13 @@ header{
     }
     
     .cardResultado{
-        @include botonBlack;
+        animation-name: mostrar;
+        animation-duration: 2s;
+        background-color: $color-fondo-principal;
+        color: $color-texto
         mat-card-title{
             text-align: center;
+            font-size: 2em;
         }
         mat-card-content{
             text-align: center;
@@ -245,14 +258,17 @@ header{
         
         .cartaDescubierta{
             background-color:$color-fondo-secundario;
-    
         }
     }
     
     .cardResultado{
-        @include botonBlack;
+        animation-name: mostrar;
+        animation-duration: 2s;
+        background-color: $color-fondo-principal;
+        color: $color-texto;
         mat-card-title{
             text-align: center;
+            font-size: 1em;
         }
         mat-card-content{
             text-align: center;

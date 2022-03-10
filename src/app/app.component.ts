@@ -1,5 +1,5 @@
 import { Carta } from './carta';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import listadoCartas from 'src/assets/listadoCartas.json';
 
 @Component({
@@ -7,8 +7,9 @@ import listadoCartas from 'src/assets/listadoCartas.json';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{ 
- 
+export class AppComponent implements OnInit{
+  
+  title!: "memo-game";
   cartas: Array<Carta> = [];
   filtroDeCartas: Array<Carta> = [];
   movimientos: number =0;
@@ -70,7 +71,7 @@ export class AppComponent implements OnInit{
           this.compararCartas(this.primeraCarta, cartaElegida);
           setTimeout(() => {
             this.aciertos===(this.cartas.length/2) ? this.juegoCompletado=true : console.log("SEGUI JUGANDO..");
-          }, 2000);   
+          }, 3000);   
       }   
   }
 
