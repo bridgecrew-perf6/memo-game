@@ -1,18 +1,25 @@
-$color-fondo-principal: #000000; //#b2dafa
-$color-fondo-secundario: #21262d;;
+//------------------- COLORES --------------------
+
+$color-fondo-principal: #000000;
+$color-fondo-secundario: #21262d;
+$btn-color-fondo: #2382a2;
 $color-texto: #c9d1d9;
+
+//------------------- MIXIN --------------------
 
 @mixin botonBlack {
     background-color: $color-fondo-secundario;
     color: $color-texto;
 }
 
+//------------------- ANIMACIONES --------------------
+
 @keyframes mostrar {
     from {opacity: 0; transform: scale(0);}
     to {opacity: 1;transform: scale(1);}
 }
 
-//---------- ESTILOS -------------
+//------------------- ESTILOS --------------------
 
 img{
     width: 100%;
@@ -61,7 +68,6 @@ header{
         background:url("./../assets/img/back.jpeg");
         cursor: pointer;
     }
-    
     .cartaDescubierta{
         background-color:$color-fondo-secundario;
         animation-name: mostrar;
@@ -124,10 +130,8 @@ header{
             background-color:$color-fondo-secundario;
             cursor: pointer; 
         }
-        
         .cartaDescubierta{
             background-color:$color-fondo-secundario;
-    
         }
     }
     
@@ -145,7 +149,6 @@ header{
             color: $color-texto;
         }
     }
-
 }
 
 @media (max-width: 968px) {
@@ -189,10 +192,8 @@ header{
             background-color:$color-fondo-secundario;
             cursor: pointer; 
         }
-        
         .cartaDescubierta{
             background-color:$color-fondo-secundario;
-    
         }
     }
     
@@ -209,7 +210,6 @@ header{
             text-align: center;
         }
     }
-
 }
 
 @media (max-width: 600px) {
@@ -242,6 +242,7 @@ header{
             button{
                 margin-right: 2px;
                 margin-left: 2px;
+                font-size: 12px;
                 @include botonBlack;
             }
         }
@@ -255,7 +256,6 @@ header{
             background-color:$color-fondo-secundario;
             cursor: pointer; 
         }
-        
         .cartaDescubierta{
             background-color:$color-fondo-secundario;
         }
@@ -274,6 +274,4 @@ header{
             text-align: center;
         }
     }
-    
 }
-
