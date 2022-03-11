@@ -16,10 +16,10 @@
     <mat-grid-list [cols]="cantColumnas" rowHeight="2:1" gutterSize="4px">
       <div *ngFor="let carta of this.cartas">
         <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
-          <img src="./../assets/img/back.jpeg" alt="atras-carta" >
+          <img src="./../assets/img/back.jpeg" alt="" >
         </mat-grid-tile>
         <mat-grid-tile class="cartaDescubierta" *ngIf="carta.estado!=='escondido'">
-          <img [src]=carta.urlImagen alt="frente-carta" >
+          <img [src]=carta.urlImagen alt="" >
         </mat-grid-tile>
       </div>
     </mat-grid-list>
@@ -27,7 +27,7 @@
   <mat-card *ngIf="this.juegoCompletado" class="cardResultado">
       <mat-card-title> GANASTE!!!</mat-card-title>
       <mat-card-content>
-          <img src="./../assets/img/aplausos.gif" alt="festejo">
+          <img src="./../assets/img/festejoo.jpeg" alt="">
           <p> Movimientos: {{this.movimientos/2}}</p>
       </mat-card-content>
   </mat-card>
