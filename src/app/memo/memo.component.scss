@@ -1,0 +1,282 @@
+//------------------- COLORES --------------------
+
+$color-fondo-principal: #000000;
+$color-fondo-secundario: #21262d;
+$btn-color-fondo: #2382a2;
+$color-texto: #c9d1d9;
+
+//------------------- MIXIN --------------------
+
+@mixin botonBlack {
+    background-color: $color-fondo-secundario;
+    color: $color-texto;
+}
+
+//------------------- ANIMACIONES --------------------
+
+@keyframes mostrar {
+    from {opacity: 0; transform: scale(0);}
+    to {opacity: 1;transform: scale(1);}
+}
+
+//------------------- ESTILOS --------------------
+
+.fondoColor{
+    background-color: $btn-color-fondo !important;
+    color: $color-fondo-secundario !important;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
+}
+
+header{
+    background-color: $color-fondo-secundario;
+    .titulo{
+        text-align: center;
+        padding: 4px;
+        background-color: $color-fondo-secundario;
+        color: $color-texto;
+        text-transform: uppercase;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
+
+.cardBotones{
+    display: flex;
+    box-shadow: none;
+    justify-content: space-between;
+    background-color: $color-fondo-principal;
+    button{
+        @include botonBlack;
+    }
+    div{
+        display: flex;
+        justify-content: space-between;
+        button{
+            margin-right: 4px;
+            margin-left: 4px;
+            @include botonBlack;
+        }
+    }
+}
+
+.cardJuego{
+    box-shadow: none;
+    margin: 0 200px;
+    background-color: $color-fondo-principal;
+    .cartaOculta{
+        background:url("./../../assets/img/back.jpeg");
+        cursor: pointer;
+    }
+    .cartaDescubierta{
+        background-color:$color-fondo-secundario;
+        animation-name: mostrar;
+        animation-duration: 2s;
+    }
+}
+
+.cardResultado{
+    background-color: $color-fondo-principal;
+    color: $color-texto;
+    animation-name: mostrar;
+    animation-duration: 2s;
+    mat-card-title{
+        text-align: center;
+        font-size: 2em;
+    }
+    mat-card-content{
+        text-align: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    header{
+        background-color: $color-fondo-secundario;
+        .titulo{
+            text-align: center;
+            padding: 4px;
+            background-color: $color-fondo-secundario;
+            color: $color-texto;
+            text-transform: uppercase;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+    
+    .cardBotones{
+        display: flex;
+        box-shadow: none;
+        justify-content: space-between;
+        background-color: $color-fondo-principal;
+        button{
+            @include botonBlack;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-right: 4px;
+                margin-left: 4px;
+                @include botonBlack;
+            }
+        }
+    }
+    
+    .cardJuego{
+        box-shadow: none;
+        margin: 0 100px;
+        background-color: $color-fondo-principal;
+        .cartaOculta{
+            background-color:$color-fondo-secundario;
+            cursor: pointer; 
+        }
+        .cartaDescubierta{
+            background-color:$color-fondo-secundario;
+        }
+    }
+    
+    .cardResultado{
+        animation-name: mostrar;
+        animation-duration: 2s;
+        background-color: $color-fondo-principal;
+        color: $color-texto;
+        mat-card-title{
+            text-align: center;
+            font-size: 2em;
+        }
+        mat-card-content{
+            text-align: center;
+            color: $color-texto;
+        }
+    }
+}
+
+@media (max-width: 968px) {
+    header{
+        background-color: $color-fondo-secundario;
+        .titulo{
+            text-align: center;
+            padding: 4px;
+            background-color: $color-fondo-secundario;
+            color: $color-texto;
+            text-transform: uppercase;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+    
+    .cardBotones{
+        display: flex;
+        box-shadow: none;
+        justify-content: space-between;
+        background-color: $color-fondo-principal;
+        button{
+            @include botonBlack;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-right: 4px;
+                margin-left: 4px;
+                @include botonBlack;
+            }
+        }
+    }
+    
+    .cardJuego{
+        box-shadow: none;
+        margin: 0 50px;
+        background-color: $color-fondo-principal;
+        .cartaOculta{
+            background-color:$color-fondo-secundario;
+            cursor: pointer; 
+        }
+        .cartaDescubierta{
+            background-color:$color-fondo-secundario;
+        }
+    }
+    
+    .cardResultado{
+        animation-name: mostrar;
+        animation-duration: 2s;
+        background-color: $color-fondo-principal;
+        color: $color-texto
+        mat-card-title{
+            text-align: center;
+            font-size: 2em;
+        }
+        mat-card-content{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    header{
+        background-color: $color-fondo-secundario;
+        .titulo{
+            text-align: center;
+            padding: 4px;
+            background-color: $color-fondo-secundario;
+            color: $color-texto;
+            text-transform: uppercase;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+    
+    .cardBotones{
+        display: flex;
+        box-shadow: none;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        background-color: $color-fondo-principal;
+        button{
+            @include botonBlack;
+            margin: 8px 80px;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin-right: 2px;
+                margin-left: 2px;
+                font-size: 12px;
+                @include botonBlack;
+            }
+        }
+    }
+    
+    .cardJuego{
+        box-shadow: none;
+        margin: 4px 4px;
+        background-color: $color-fondo-principal;
+        .cartaOculta{
+            background-color:$color-fondo-secundario;
+            cursor: pointer; 
+        }
+        .cartaDescubierta{
+            background-color:$color-fondo-secundario;
+        }
+    }
+    
+    .cardResultado{
+        animation-name: mostrar;
+        animation-duration: 2s;
+        background-color: $color-fondo-principal;
+        color: $color-texto;
+        mat-card-title{
+            text-align: center;
+            font-size: 1em;
+        }
+        mat-card-content{
+            text-align: center;
+        }
+    }
+}

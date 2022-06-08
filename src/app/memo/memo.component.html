@@ -1,0 +1,34 @@
+<header>
+    <h1 class="titulo">Juego De La Memoria</h1>
+  </header>
+  <body>
+    <mat-card class="cardBotones">
+      <button mat-raised-button (click)="reiniciarJuego()">Reiniciar</button>
+      <div>
+        <button mat-raised-button (click)="cambiarNivel(1)" [class]="{'fondoColor': this.nivelElegido===1}">Nivel 1</button>
+        <button mat-raised-button (click)="cambiarNivel(2)" [class]="{'fondoColor': this.nivelElegido===2}">Nivel 2</button>
+        <button mat-raised-button (click)="cambiarNivel(3)" [class]="{'fondoColor': this.nivelElegido===3}">Nivel 3</button>
+        <button mat-raised-button (click)="cambiarNivel(4)" [class]="{'fondoColor': this.nivelElegido===4}">Nivel 4</button>
+        <button mat-raised-button (click)="cambiarNivel(5)" [class]="{'fondoColor': this.nivelElegido===5}">Nivel 5</button>
+      </div>
+    </mat-card>
+    <mat-card class="cardJuego"  *ngIf="!this.juegoCompletado">
+      <mat-grid-list [cols]="cantColumnas" rowHeight="2:1" gutterSize="4px">
+        <div *ngFor="let carta of this.cartas">
+          <mat-grid-tile (click)="girarCarta(carta)" class="cartaOculta" *ngIf="carta.estado==='escondido'">
+            <img src="./../assets/img/back.jpeg" alt="" >
+          </mat-grid-tile>
+          <mat-grid-tile class="cartaDescubierta" *ngIf="carta.estado!=='escondido'">
+            <img [src]=carta.urlImagen alt="" >
+          </mat-grid-tile>
+        </div>
+      </mat-grid-list>
+    </mat-card>
+    <mat-card *ngIf="this.juegoCompletado" class="cardResultado">
+        <mat-card-title> GANASTE!!!</mat-card-title>
+        <mat-card-content>
+            <img src="./../assets/img/aplausos.gif" alt="">
+            <p> Movimientos: {{this.movimientos/2}}</p>
+        </mat-card-content>
+    </mat-card>
+  </body>

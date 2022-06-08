@@ -1,0 +1,34 @@
+<header>
+    <h1 class="titulo">Conecta 4</h1>
+  </header>
+<section class="resultado">
+    <mat-card class="titulo" *ngIf="numerosDeJugadas<43; else juegoTerminado">
+        <div class="contadorPuntos">
+            <p>Jugador 1 🔴 <mat-chip class="cantidadPuntos">{{resultados[1]}}</mat-chip></p>
+            <button mat-button (click)="reiniciarContador()">Reiniciar</button>
+            <p>Jugador 2 🟡 <mat-chip class="cantidadPuntos">{{resultados[2]}}</mat-chip></p>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-fab class="buttonResetJuego" (click)="reinciarJuego()">
+            <mat-icon>restart_alt</mat-icon>
+        </button>
+        <h2 *ngIf="ganadorEncontrado==0">
+            Turno del jugador {{usuarioActivo}} {{usuarioActivo | fichas}}
+        </h2>
+    </mat-card>
+    <ng-template #juegoTerminado>Juego Terminado!!</ng-template>
+</section>
+
+<section *ngIf="numerosDeJugadas<43 && ganadorEncontrado==0" class="tablaTotal" >
+    <mat-grid-list cols="7" >
+        <mat-grid-tile *ngFor="let item of items; index as i" class="tablero" (click)="ponerFicha(i,item)">
+            {{item | fichas}}
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>
+
+<section *ngIf="ganadorEncontrado!=0" class="resultadoFinal">
+    <mat-card class="titulo">
+        <h2> Gano del jugador {{ganadorEncontrado}} {{ganadorEncontrado | fichas}} </h2>
+    </mat-card>
+</section>

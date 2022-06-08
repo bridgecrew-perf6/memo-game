@@ -1,0 +1,92 @@
+//------------------- COLORES --------------------
+
+$color-fondo-principal: #000000;
+$color-fondo-secundario: #21262d;
+$btn-color-fondo: #2382a2;
+$color-texto: #c9d1d9;
+
+.tablero{
+    background-color: $color-fondo-secundario;
+    border: solid 1px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 2em;
+}
+
+.resultado{
+    background-color: $color-fondo-principal;
+
+    .titulo{
+        background-color: $color-fondo-principal;
+        color: $color-texto;
+    }
+}
+
+header{ 
+    background-color: $color-fondo-secundario;
+    .titulo{
+        text-align: center;
+        padding: 4px;
+        background-color: $color-fondo-secundario;
+        color: $color-texto;
+        text-transform: uppercase;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-bottom: 0;
+    }
+}
+ 
+ .titulo{
+     text-align: center;
+     box-shadow: none;
+ }
+ 
+ h2{
+     margin-top: 8px;
+ }
+ 
+ button{
+     margin-top: 8px;
+ }
+ 
+ .contadorPuntos{
+     background-color:$color-fondo-secundario;
+     color: $color-texto;
+     border-radius: 10px;
+     padding-top: 8px;
+     display: flex;
+     p{
+         width: 50%;
+         text-transform: uppercase;
+
+         .cantidadPuntos{
+             background-color: $color-fondo-secundario;
+             color: $color-texto;
+         }
+     }
+ }
+ 
+ .buttonResetJuego{
+     background-color:  $btn-color-fondo;
+ 
+     mat-icon{
+         color: $color-fondo-secundario;
+     }
+ }
+
+ @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+.resultadoFinal{
+    animation-duration: 3s;
+    animation-name: slidein;
+}
