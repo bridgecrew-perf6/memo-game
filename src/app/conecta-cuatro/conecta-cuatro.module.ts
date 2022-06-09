@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatExpansionModule
   ]
 })
 export class ConectaCuatroModule { }

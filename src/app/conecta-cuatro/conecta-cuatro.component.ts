@@ -13,7 +13,9 @@ export class ConectaCuatroComponent implements OnInit {
   usuarioActivo: number = 1;
   numerosDeJugadas: number = 1;
   ganadorEncontrado: number = 0;
-  resultados: number[] = [0,0,0]
+  resultados: number[] = [0,0,0];
+
+  panelOpenState = false;
 
   constructor(private snackBar: MatSnackBar) { }
 
